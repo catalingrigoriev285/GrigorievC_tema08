@@ -20,10 +20,13 @@ namespace lightingProject
     {
         private Cube cube = new Cube(new Vector3(1, 1, 1), new Vector3(2f, 2f, 2f), Color.FromArgb(179, 51, 51));
         private Cube lightCube; // cub vizual al sursei de lumina
+        private Cube light1Cube;
 
         private bool lightEnabled = false;
+        private bool light1Enabled = false;
 
         private float[] light0Position = { 1f, 5f, 22f, 1f };
+        private float[] light1Position;
 
         private float cameraX = 6f;
 
@@ -36,6 +39,8 @@ namespace lightingProject
             glControl1.Resize += glControl1_Resize;
 
             lightCube = new Cube(new Vector3(light0Position[0], light0Position[1], light0Position[2]), new Vector3(1f, 1f, 1f), Color.Yellow);
+            light1Position = new float[] { trackBar6.Value, trackBar4.Value, trackBar5.Value, 1f };
+            light1Cube = new Cube(new Vector3(light1Position[0], light1Position[1], light1Position[2]), new Vector3(1f, 1f, 1f), Color.Green);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -88,12 +93,12 @@ namespace lightingProject
             GL.Enable(EnableCap.DepthTest);
             GL.DepthFunc(DepthFunction.Less);
 
+            // Light0
             if (lightEnabled)
             {
                 GL.Enable(EnableCap.Lighting);
                 GL.Enable(EnableCap.Light0);
 
-                // Positional white light
                 GL.Light(LightName.Light0, LightParameter.Position, light0Position);
                 GL.Light(LightName.Light0, LightParameter.Diffuse, new float[] { 1f, 1f, 1f, 1f });
                 GL.Light(LightName.Light0, LightParameter.Ambient, new float[] { 0.2f, 0.2f, 0.2f, 1f });
@@ -101,10 +106,25 @@ namespace lightingProject
                 GL.Enable(EnableCap.ColorMaterial);
                 GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.AmbientAndDiffuse);
             }
-            else
+
+            // Light1
+            if (light1Enabled)
+            {
+                if (!GL.IsEnabled(EnableCap.Lighting))
+                    GL.Enable(EnableCap.Lighting);
+                GL.Enable(EnableCap.Light1);
+                GL.Light(LightName.Light1, LightParameter.Position, light1Position);
+
+                GL.Light(LightName.Light1, LightParameter.Diffuse, new float[] { 1f, 0f, 0f, 1f });
+                GL.Light(LightName.Light1, LightParameter.Ambient, new float[] { 0.2f, 0f, 0f, 1f });
+                GL.Light(LightName.Light1, LightParameter.Specular, new float[] { 1f, 0.4f, 0.4f, 1f });
+            }
+
+            if (!lightEnabled && !light1Enabled)
             {
                 GL.Disable(EnableCap.Lighting);
                 GL.Disable(EnableCap.Light0);
+                GL.Disable(EnableCap.Light1);
             }
 
             GenerateAxes();
@@ -114,6 +134,7 @@ namespace lightingProject
             if (wasLighting)
                 GL.Disable(EnableCap.Lighting);
             lightCube.Draw();
+            light1Cube.Draw();
             if (wasLighting)
                 GL.Enable(EnableCap.Lighting);
 
@@ -152,9 +173,48 @@ namespace lightingProject
             glControl1.Invalidate();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.light1Enabled = !this.light1Enabled;
+            glControl1.Invalidate();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void trackBar6_Scroll(object sender, EventArgs e)
+        {
+            if (this.light1Enabled)
+            {
+                int value = trackBar6.Value;
+                light1Position = new float[] { value, light1Position[1], light1Position[2], 1f };
+                light1Cube = new Cube(new Vector3(light1Position[0], light1Position[1], light1Position[2]), new Vector3(0.5f, 0.5f, 0.5f), Color.Green);
+                glControl1.Invalidate();
+            }
+        }
+
+        private void trackBar4_Scroll(object sender, EventArgs e)
+        {
+            if (this.light1Enabled)
+            {
+                int value = trackBar4.Value;
+                light1Position = new float[] { light1Position[0], value, light1Position[2], 1f };
+                light1Cube = new Cube(new Vector3(light1Position[0], light1Position[1], light1Position[2]), new Vector3(0.5f, 0.5f, 0.5f), Color.Green);
+                glControl1.Invalidate();
+            }
+        }
+
+        private void trackBar5_Scroll(object sender, EventArgs e)
+        {
+            if (this.light1Enabled)
+            {
+                int value = trackBar5.Value;
+                light1Position = new float[] { light1Position[0], light1Position[1], value, 1f };
+                light1Cube = new Cube(new Vector3(light1Position[0], light1Position[1], light1Position[2]), new Vector3(0.5f, 0.5f, 0.5f), Color.Green);
+                glControl1.Invalidate();
+            }
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)

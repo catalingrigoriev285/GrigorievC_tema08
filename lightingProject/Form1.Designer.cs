@@ -182,6 +182,7 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "Activeaza iluminarea 2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label5
             // 
@@ -202,6 +203,7 @@
             this.trackBar4.Size = new System.Drawing.Size(209, 56);
             this.trackBar4.TabIndex = 18;
             this.trackBar4.Value = 1;
+            this.trackBar4.Scroll += new System.EventHandler(this.trackBar4_Scroll);
             // 
             // label6
             // 
@@ -232,6 +234,7 @@
             this.trackBar5.Size = new System.Drawing.Size(209, 56);
             this.trackBar5.TabIndex = 15;
             this.trackBar5.Value = 1;
+            this.trackBar5.Scroll += new System.EventHandler(this.trackBar5_Scroll);
             // 
             // trackBar6
             // 
@@ -242,6 +245,7 @@
             this.trackBar6.Size = new System.Drawing.Size(209, 56);
             this.trackBar6.TabIndex = 14;
             this.trackBar6.Value = 1;
+            this.trackBar6.Scroll += new System.EventHandler(this.trackBar6_Scroll);
             // 
             // label8
             // 
