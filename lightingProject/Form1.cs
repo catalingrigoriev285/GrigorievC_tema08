@@ -11,12 +11,17 @@ using System.Windows.Forms;
 using OpenTK.Platform;
 using OpenTK.Graphics.OpenGL;
 using OpenTK;
+using lightingProject.primitives;
 
 
 namespace lightingProject
 {
     public partial class Form1 : Form
     {
+        private Cube cube = new Cube(new Vector3(1, 1, 1), new Vector3(2f, 2f, 2f), Color.FromArgb(179, 51, 51));
+
+        private bool lightEnabled = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -69,7 +74,7 @@ namespace lightingProject
 
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
-            Matrix4 lookat = Matrix4.LookAt(4, 4, 5, 0, 0, 0, 0, 1, 0);
+            Matrix4 lookat = Matrix4.LookAt(6f, 6f, 10f, 0f, 0f, 0f, 0f, 1f, 0f);
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref lookat);
 
@@ -77,6 +82,7 @@ namespace lightingProject
             GL.DepthFunc(DepthFunction.Less);
 
             GenerateAxes();
+            cube.Draw();
 
             glControl1.SwapBuffers();
         }
@@ -104,6 +110,11 @@ namespace lightingProject
         private void Form1_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
