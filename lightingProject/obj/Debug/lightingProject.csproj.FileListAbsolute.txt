@@ -1,0 +1,17 @@
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\bin\Debug\lightingProject.exe.config
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\bin\Debug\lightingProject.exe
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\bin\Debug\lightingProject.pdb
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\bin\Debug\OpenTK.dll
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\bin\Debug\OpenTK.GLControl.dll
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\bin\Debug\OpenTK.pdb
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\bin\Debug\OpenTK.xml
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\bin\Debug\OpenTK.GLControl.pdb
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\bin\Debug\OpenTK.GLControl.xml
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\obj\Debug\lightingProject.csproj.AssemblyReference.cache
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\obj\Debug\lightingProject.Form1.resources
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\obj\Debug\lightingProject.Properties.Resources.resources
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\obj\Debug\lightingProject.csproj.GenerateResource.cache
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\obj\Debug\lightingProject.csproj.CoreCompileInputs.cache
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\obj\Debug\lighting.6642017D.Up2Date
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\obj\Debug\lightingProject.exe
+C:\Users\catal\OneDrive\Documents\GitHub\GrigorievC_tema08\lightingProject\obj\Debug\lightingProject.pdb
