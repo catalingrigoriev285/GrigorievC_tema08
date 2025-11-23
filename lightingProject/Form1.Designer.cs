@@ -40,10 +40,21 @@
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.trackBarCameraX = new System.Windows.Forms.TrackBar();
             this.labelCameraX = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.trackBar4 = new System.Windows.Forms.TrackBar();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.trackBar5 = new System.Windows.Forms.TrackBar();
+            this.trackBar6 = new System.Windows.Forms.TrackBar();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCameraX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -56,7 +67,7 @@
             this.glControl1.Location = new System.Drawing.Point(0, 0);
             this.glControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.glControl1.Name = "glControl1";
-            this.glControl1.Size = new System.Drawing.Size(826, 444);
+            this.glControl1.Size = new System.Drawing.Size(826, 518);
             this.glControl1.TabIndex = 0;
             this.glControl1.VSync = false;
             // 
@@ -64,7 +75,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(833, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 32);
+            this.button1.Size = new System.Drawing.Size(258, 32);
             this.button1.TabIndex = 1;
             this.button1.Text = "Activeaza iluminarea";
             this.button1.UseVisualStyleBackColor = true;
@@ -163,11 +174,97 @@
             this.labelCameraX.TabIndex = 11;
             this.labelCameraX.Text = "CamX";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(833, 286);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(258, 32);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Activeaza iluminarea 2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(846, 413);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 25);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Y";
+            // 
+            // trackBar4
+            // 
+            this.trackBar4.Location = new System.Drawing.Point(878, 413);
+            this.trackBar4.Maximum = 100;
+            this.trackBar4.Minimum = 1;
+            this.trackBar4.Name = "trackBar4";
+            this.trackBar4.Size = new System.Drawing.Size(209, 56);
+            this.trackBar4.TabIndex = 18;
+            this.trackBar4.Value = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(848, 462);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 25);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Z";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(848, 361);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(26, 25);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "X";
+            // 
+            // trackBar5
+            // 
+            this.trackBar5.Location = new System.Drawing.Point(880, 462);
+            this.trackBar5.Maximum = 100;
+            this.trackBar5.Minimum = 1;
+            this.trackBar5.Name = "trackBar5";
+            this.trackBar5.Size = new System.Drawing.Size(209, 56);
+            this.trackBar5.TabIndex = 15;
+            this.trackBar5.Value = 1;
+            // 
+            // trackBar6
+            // 
+            this.trackBar6.Location = new System.Drawing.Point(880, 361);
+            this.trackBar6.Maximum = 100;
+            this.trackBar6.Minimum = 1;
+            this.trackBar6.Name = "trackBar6";
+            this.trackBar6.Size = new System.Drawing.Size(209, 56);
+            this.trackBar6.TabIndex = 14;
+            this.trackBar6.Value = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(831, 332);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(165, 16);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Iluminarea 2 ( coordonate )";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 444);
+            this.ClientSize = new System.Drawing.Size(1103, 520);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.trackBar4);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.trackBar5);
+            this.Controls.Add(this.trackBar6);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.labelCameraX);
             this.Controls.Add(this.trackBarCameraX);
             this.Controls.Add(this.label4);
@@ -187,6 +284,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCameraX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +306,14 @@
         private System.Windows.Forms.TrackBar trackBar3;
         private System.Windows.Forms.TrackBar trackBarCameraX;
         private System.Windows.Forms.Label labelCameraX;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TrackBar trackBar4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TrackBar trackBar5;
+        private System.Windows.Forms.TrackBar trackBar6;
+        private System.Windows.Forms.Label label8;
     }
 }
 

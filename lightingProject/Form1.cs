@@ -143,6 +143,7 @@ namespace lightingProject
         private void Form1_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void button1_Click(object sender, EventArgs e)
