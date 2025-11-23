@@ -84,6 +84,21 @@ namespace lightingProject
             GenerateAxes();
             cube.Draw();
 
+            if (lightEnabled)
+            {
+                GL.Enable(EnableCap.Lighting);
+
+                GL.Light(LightName.Light0, LightParameter.Position, new float[] { 10f, 10f, 10f, 1f });
+                GL.Enable(EnableCap.Lighting);
+            } else
+            {
+                GL.Disable(EnableCap.Lighting);
+
+                GL.Disable(EnableCap.Lighting);
+            }
+
+            
+
             glControl1.SwapBuffers();
         }
 
@@ -114,7 +129,8 @@ namespace lightingProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.lightEnabled = !this.lightEnabled;
+            glControl1.Invalidate();
         }
     }
 }
