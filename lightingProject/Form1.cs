@@ -19,10 +19,11 @@ namespace lightingProject
     public partial class Form1 : Form
     {
         private Cube cube = new Cube(new Vector3(1, 1, 1), new Vector3(2f, 2f, 2f), Color.FromArgb(179, 51, 51));
+        private Cube lightCube; // cub vizual al sursei de lumina
 
         private bool lightEnabled = false;
 
-        private float[] light0Position = { 0f, 5f, 22f, 1f };
+        private float[] light0Position = { 1f, 5f, 22f, 1f };
 
         private float cameraX = 6f;
 
@@ -33,6 +34,8 @@ namespace lightingProject
             glControl1.Load += GlControl1_Load;
             glControl1.Paint += glControl1_Paint;
             glControl1.Resize += glControl1_Resize;
+
+            lightCube = new Cube(new Vector3(light0Position[0], light0Position[1], light0Position[2]), new Vector3(1f, 1f, 1f), Color.Yellow);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -107,6 +110,13 @@ namespace lightingProject
             GenerateAxes();
             cube.Draw();
 
+            bool wasLighting = GL.IsEnabled(EnableCap.Lighting);
+            if (wasLighting)
+                GL.Disable(EnableCap.Lighting);
+            lightCube.Draw();
+            if (wasLighting)
+                GL.Enable(EnableCap.Lighting);
+
             glControl1.SwapBuffers();
         }
 
@@ -153,6 +163,7 @@ namespace lightingProject
                 int value = trackBar1.Value;
 
                 light0Position = new float[] { value, light0Position[1], light0Position[2], 1f };
+                lightCube = new Cube(new Vector3(light0Position[0], light0Position[1], light0Position[2]), new Vector3(0.5f, 0.5f, 0.5f), Color.Yellow);
 
                 glControl1.Invalidate();
             }
@@ -165,6 +176,7 @@ namespace lightingProject
                 int value = trackBar2.Value;
 
                 light0Position = new float[] { light0Position[0], light0Position[1], value, 1f };
+                lightCube = new Cube(new Vector3(light0Position[0], light0Position[1], light0Position[2]), new Vector3(0.5f, 0.5f, 0.5f), Color.Yellow);
                 glControl1.Invalidate();
             }
         }
@@ -176,6 +188,7 @@ namespace lightingProject
                 int value = trackBar3.Value;
 
                 light0Position = new float[] { light0Position[0], value, light0Position[2], 1f };
+                lightCube = new Cube(new Vector3(light0Position[0], light0Position[1], light0Position[2]), new Vector3(0.5f, 0.5f, 0.5f), Color.Yellow);
                 glControl1.Invalidate();
             }
         }

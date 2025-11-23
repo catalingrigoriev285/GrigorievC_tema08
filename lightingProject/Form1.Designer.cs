@@ -84,18 +84,22 @@
             // 
             this.trackBar1.Location = new System.Drawing.Point(882, 76);
             this.trackBar1.Maximum = 100;
+            this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(209, 56);
             this.trackBar1.TabIndex = 3;
+            this.trackBar1.Value = 1;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // trackBar2
             // 
             this.trackBar2.Location = new System.Drawing.Point(882, 177);
             this.trackBar2.Maximum = 100;
+            this.trackBar2.Minimum = 1;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(209, 56);
             this.trackBar2.TabIndex = 5;
+            this.trackBar2.Value = 1;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // label2
@@ -132,9 +136,11 @@
             // 
             this.trackBar3.Location = new System.Drawing.Point(880, 128);
             this.trackBar3.Maximum = 100;
+            this.trackBar3.Minimum = 1;
             this.trackBar3.Name = "trackBar3";
             this.trackBar3.Size = new System.Drawing.Size(209, 56);
             this.trackBar3.TabIndex = 8;
+            this.trackBar3.Value = 1;
             this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
             // 
             // trackBarCameraX
