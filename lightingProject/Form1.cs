@@ -24,6 +24,8 @@ namespace lightingProject
 
         private float[] light0Position = { 0f, 5f, 22f, 1f };
 
+        private float cameraX = 6f;
+
         public Form1()
         {
             InitializeComponent();
@@ -76,7 +78,7 @@ namespace lightingProject
 
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
-            Matrix4 lookat = Matrix4.LookAt(6f, 6f, 10f, 0f, 0f, 0f, 0f, 1f, 0f);
+            Matrix4 lookat = Matrix4.LookAt(cameraX, 6f, 10f, 0f, 0f, 0f, 0f, 1f, 0f);
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref lookat);
 
@@ -176,6 +178,12 @@ namespace lightingProject
                 light0Position = new float[] { light0Position[0], value, light0Position[2], 1f };
                 glControl1.Invalidate();
             }
+        }
+
+        private void trackBarCameraX_Scroll(object sender, EventArgs e)
+        {
+            cameraX = trackBarCameraX.Value;
+            glControl1.Invalidate();
         }
     }
 }

@@ -38,9 +38,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.trackBarCameraX = new System.Windows.Forms.TrackBar();
+            this.labelCameraX = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarCameraX)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -134,11 +137,33 @@
             this.trackBar3.TabIndex = 8;
             this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
             // 
+            // trackBarCameraX
+            // 
+            this.trackBarCameraX.Location = new System.Drawing.Point(882, 239);
+            this.trackBarCameraX.Maximum = 20;
+            this.trackBarCameraX.Minimum = -20;
+            this.trackBarCameraX.Name = "trackBarCameraX";
+            this.trackBarCameraX.Size = new System.Drawing.Size(209, 56);
+            this.trackBarCameraX.TabIndex = 10;
+            this.trackBarCameraX.Value = 6;
+            this.trackBarCameraX.Scroll += new System.EventHandler(this.trackBarCameraX_Scroll);
+            // 
+            // labelCameraX
+            // 
+            this.labelCameraX.AutoSize = true;
+            this.labelCameraX.Location = new System.Drawing.Point(833, 239);
+            this.labelCameraX.Name = "labelCameraX";
+            this.labelCameraX.Size = new System.Drawing.Size(43, 16);
+            this.labelCameraX.TabIndex = 11;
+            this.labelCameraX.Text = "CamX";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1103, 444);
+            this.Controls.Add(this.labelCameraX);
+            this.Controls.Add(this.trackBarCameraX);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.trackBar3);
             this.Controls.Add(this.label3);
@@ -155,6 +180,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarCameraX)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,6 +198,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TrackBar trackBar3;
+        private System.Windows.Forms.TrackBar trackBarCameraX;
+        private System.Windows.Forms.Label labelCameraX;
     }
 }
 
