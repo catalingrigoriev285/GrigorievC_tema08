@@ -22,6 +22,8 @@ namespace lightingProject
 
         private bool lightEnabled = false;
 
+        private float[] light0Position = { 0f, 5f, 22f, 1f };
+
         public Form1()
         {
             InitializeComponent();
@@ -81,23 +83,27 @@ namespace lightingProject
             GL.Enable(EnableCap.DepthTest);
             GL.DepthFunc(DepthFunction.Less);
 
-            GenerateAxes();
-            cube.Draw();
-
             if (lightEnabled)
             {
                 GL.Enable(EnableCap.Lighting);
+                GL.Enable(EnableCap.Light0);
 
-                GL.Light(LightName.Light0, LightParameter.Position, new float[] { 10f, 10f, 10f, 1f });
-                GL.Enable(EnableCap.Lighting);
-            } else
+                // Positional white light
+                GL.Light(LightName.Light0, LightParameter.Position, light0Position);
+                GL.Light(LightName.Light0, LightParameter.Diffuse, new float[] { 1f, 1f, 1f, 1f });
+                GL.Light(LightName.Light0, LightParameter.Ambient, new float[] { 0.2f, 0.2f, 0.2f, 1f });
+                GL.Light(LightName.Light0, LightParameter.Specular, new float[] { 1f, 1f, 1f, 1f });
+                GL.Enable(EnableCap.ColorMaterial);
+                GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.AmbientAndDiffuse);
+            }
+            else
             {
                 GL.Disable(EnableCap.Lighting);
-
-                GL.Disable(EnableCap.Lighting);
+                GL.Disable(EnableCap.Light0);
             }
 
-            
+            GenerateAxes();
+            cube.Draw();
 
             glControl1.SwapBuffers();
         }
@@ -131,6 +137,45 @@ namespace lightingProject
         {
             this.lightEnabled = !this.lightEnabled;
             glControl1.Invalidate();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            if (this.lightEnabled)
+            {
+                int value = trackBar1.Value;
+
+                light0Position = new float[] { value, light0Position[1], light0Position[2], 1f };
+
+                glControl1.Invalidate();
+            }
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            if (this.lightEnabled)
+            {
+                int value = trackBar2.Value;
+
+                light0Position = new float[] { light0Position[0], light0Position[1], value, 1f };
+                glControl1.Invalidate();
+            }
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            if (this.lightEnabled)
+            {
+                int value = trackBar3.Value;
+
+                light0Position = new float[] { light0Position[0], value, light0Position[2], 1f };
+                glControl1.Invalidate();
+            }
         }
     }
 }
